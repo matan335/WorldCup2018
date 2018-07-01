@@ -66,6 +66,14 @@ h2{
     background-size: cover;
     text-align: center;
 }
+.game div{
+    
+display:  flex;
+    
+flex-direction:  column;
+    
+margin-bottom: 5px;
+}
 
 .container div{
     background-color: white;

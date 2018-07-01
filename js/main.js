@@ -63,8 +63,12 @@ function renderTeam(games, country) {
 function renderTeamGames(teamGames, country) {
     var strHTMLs = '';
     teamGames.forEach(function (game) {
+        console.log(game)
         var isWon = 'The team of ' + country + ' lost';
         if (game.winner === country) isWon = 'The team of ' + country + ' won';
+        if (!game.winner) isWon = 'The game has not decided yet';
+        var weather=game.weather
+        if(!weather) weather={description:'The weather has not been occured yet',temp_celsius:'Uknown' }
 
         strHTMLs +=
             `
@@ -89,6 +93,14 @@ function renderTeamGames(teamGames, country) {
         Time of the game: 
         </span>
         ${game.datetime}
+        </div>
+
+        <div>
+        <span>
+        The weather was: 
+        </span>
+        ${weather.description}
+         at ${weather.temp_celsius}°
         </div>
 
         </div>
